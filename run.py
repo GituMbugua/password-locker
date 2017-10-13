@@ -3,7 +3,20 @@ from locker import Credential
 
 def create_credential(uname, password):
     '''
-    function to create a new contact
+    function to create a new credential
     '''
     new_cred = Credential(uname, password)
     return new_cred
+
+def save_credentials(cred):
+    '''
+    function to create a new credential
+    '''
+    cred.save_password()
+    
+def del_credential(cred):
+    '''
+    function to delete a credential
+    '''
+    cred.delete_password()
+    
