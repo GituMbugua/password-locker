@@ -21,3 +21,12 @@ class Credential:
         remove credential objects from password list
         '''
         Credential.password_list.remove(self)
+
+    @classmethod    
+    def find_by_username(cls, name):
+        '''
+        method takes in the user name and returns a credential that matches it
+        '''
+        for credential in cls.password_list:
+            if credential.user_name == name:
+                return credential
