@@ -37,3 +37,8 @@ class Credential:
         returns the password list
         '''
         return cls.password_list
+
+    @classmethod
+    def copy_user_name(cls, name):
+        password_found = Credential.find_by_username(name)
+        pyperclip.copy(password_found.user_name)
