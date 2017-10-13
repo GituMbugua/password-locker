@@ -15,3 +15,9 @@ class Credential:
         save credential objects to the password list
         '''
         Credential.password_list.append(self)
+
+    def delete_password(self):
+        '''
+        remove credential objects from password list
+        '''
+        Credential.password_list.remove(self)
