@@ -15,6 +15,13 @@ class TestLocker(unittest.TestCase):
         '''
         self.assertEqual(self.new_cred.user_name, "gitu")
         self.assertEqual(self.new_cred.password, "1234asdf")
+
+    def test_save_password(self):
+        '''
+        test to see if the object is saved in the password list
+        '''
+        self.new_cred.save_password() # save the password
+        self.assertEqual(len(Credential.password_list), 1)
                 
 
 if __name__ == '__main__':
