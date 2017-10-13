@@ -15,7 +15,7 @@ class TestLocker(unittest.TestCase):
         '''
         self.assertEqual(self.new_cred.user_name, "gitu")
         self.assertEqual(self.new_cred.password, "1234asdf")
-        
+
     def tearDown(self):
         '''
         clean up after each test case runs
@@ -57,7 +57,14 @@ class TestLocker(unittest.TestCase):
         '''
         self.assertEqual(Credential.display_passwords(), Credential.password_list)
         
-                
+    def test_copy_username(self):
+        '''
+        test to confirm that a username can be copied from a found credential
+        '''
+        self.new_cred.save_password()
+        Credential.copy_user_name("gitu")
+        
+        self.assertEqual(self.new_cred.user_name, pyperclip.paste())
 
 if __name__ == '__main__':
     unittest.main()
