@@ -20,3 +20,8 @@ def del_credential(cred):
     '''
     cred.delete_password()
     
+def find_credential(uname):
+    '''
+    function that finds a credential by the username and returns it
+    '''
+    return Credential.find_by_username(uname)
