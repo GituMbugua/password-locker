@@ -15,6 +15,12 @@ class TestLocker(unittest.TestCase):
         '''
         self.assertEqual(self.new_cred.user_name, "gitu")
         self.assertEqual(self.new_cred.password, "1234asdf")
+        
+    def tearDown(self):
+        '''
+        clean up after each test case runs
+        '''
+        Credential.password_list = []
 
     def test_save_password(self):
         '''
