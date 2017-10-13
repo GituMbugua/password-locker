@@ -44,6 +44,12 @@ class TestLocker(unittest.TestCase):
         found_password = Credential.find_by_username("gitu")
         
         self.assertEqual(found_password.password, test_password.password)
+
+    def test_display_all_passwords(self):
+        '''
+        returns a list of all saved passwords
+        '''
+        self.assertEqual(Credential.display_passwords(), Credential.password_list)
         
                 
 
