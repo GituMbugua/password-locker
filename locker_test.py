@@ -33,6 +33,18 @@ class TestLocker(unittest.TestCase):
         
         self.new_cred.delete_password() # delete contact object
         self.assertEqual(len(Credential.password_list), 1)
+
+    def test_find_password_by_username(self):
+        '''
+        test to see if we can find a password using the username
+        '''
+        self.new_cred.save_password()
+        test_password = Credential("gitu", "1234asdf")
+        test_password.save_password()
+        found_password = Credential.find_by_username("gitu")
+        
+        self.assertEqual(found_password.password, test_password.password)
+        
                 
 
 if __name__ == '__main__':
