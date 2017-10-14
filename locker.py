@@ -6,7 +6,7 @@ class Credential:
     '''
     password_list = []
     
-    def __init__(self, user_name, password):
+    def __init__(self, first_name, user_name, password):
         self.user_name = user_name
         self.password = password
         
