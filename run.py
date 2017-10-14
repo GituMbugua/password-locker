@@ -25,3 +25,15 @@ def find_credential(uname):
     function that finds a credential by the username and returns it
     '''
     return Credential.find_by_username(uname)
+def display_passwords():
+    '''
+    function that returns all the saved passwords
+    '''
+    return Credential.display_passwords()
+
+
+def main():
+    print("Hello, welcome to Password Locker. What is your name?")
+            first_name = input()
+            
+            print(f"{first_name}, use the following codes: ac - add credentials to your list,  ")
