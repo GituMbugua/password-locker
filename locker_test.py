@@ -50,6 +50,20 @@ class TestLocker(unittest.TestCase):
         found_password = Credential.find_by_username("gitu")
         
         self.assertEqual(found_password.password, test_password.password)
+        
+    def test_password_exists(self):
+        '''
+        test to see if we can return a boolean if a credential is not found
+        '''
+        self.new_cred.save_password()
+        test_password = Credential("gitu", "1234asdf")
+        test_password.save_password()
+        
+        credential_exists = Credential.credential_exist("gitu")
+        
+        self.assertTrue(credential_exists)
+        
+        
 
     def test_display_all_passwords(self):
         '''
