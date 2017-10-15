@@ -3,6 +3,11 @@
 ### Description
 This program allows a user to save accounts and their passwords
 
+#### Behaviours
+* Create credentials to store in the password locker
+* Display all stored credentials
+* Find a specific credential
+
 #### Technologies
 * Python
 
