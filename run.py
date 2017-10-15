@@ -56,4 +56,16 @@ def main():
                     print(f"New Credential {u_name} {p_word} created")
                     print('\n')
                 
-            
+            elif short_code == 'sc':
+                    if display_passwords():
+                            print("Here is a list of all your contacts")
+                            print('\n')
+                            
+                            for contact in display_passwords():
+                                    print(f"{credential.user_name} {credential.}")
+                            print('\n')
+                    else:
+                            print('\n')
+                            print("You do not have any credentials saved yet")
+                            print('\n')
+                            
