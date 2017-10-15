@@ -34,6 +34,26 @@ def display_passwords():
 
 def main():
     print("Hello, welcome to Password Locker. What is your name?")
-            first_name = input()
+    first_name = input()
+    
+    while True:
+            print(f"{first_name}, use the following codes: ac - add new credentials, sc - show all stored credentials, fc - find specific credentials, ex - exit ")
             
-            print(f"{first_name}, use the following codes: ac - add credentials to your list,  ")
+            short_code = input().lower()
+            
+            if short_code == 'ac':
+                    print("New Credentials")
+                    print("-" *10)
+                    
+                    print("Username....")
+                    u_name = input()
+                    
+                    print("Password")
+                    p_word = input()
+                    
+                    save_credentials(create_credential(u_name, p_word)) #create and save new cred
+                    print('\n')
+                    print(f"New Credential {u_name} {p_word} created")
+                    print('\n')
+                
+            
