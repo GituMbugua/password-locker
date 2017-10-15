@@ -6,7 +6,7 @@ class Credential:
     '''
     password_list = []
     
-    def __init__(self, first_name, user_name, password):
+    def __init__(self, user_name, password):
         self.user_name = user_name
         self.password = password
         
@@ -30,6 +30,13 @@ class Credential:
         for credential in cls.password_list:
             if credential.user_name == name:
                 return credential
+            
+    @classmethod
+    def credential_exist(cls, name):
+        for credential in cls.password_list:
+            if credential.user_name == name:
+                return True
+        return False
     
     @classmethod
     def display_passwords(cls):
