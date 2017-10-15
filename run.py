@@ -1,4 +1,5 @@
 #!/usr/bin/env python3.6
+
 from locker import Credential
 
 def create_credential(uname, password):
@@ -69,3 +70,21 @@ def main():
                             print("You do not have any credentials saved yet")
                             print('\n')
                             
+            elif short_code == 'fc':
+                    print("Enter the user name you want to search for")
+                    
+                    search_name = input()
+                    if check_existing_credentials(search_name):
+                            search_credential = find_credential(search_name)
+                            print(f"{search_credential.user_name} {search_credential.password}")
+                    else:
+                        print("That credential cannot be found")
+                        
+            elif short_code == 'ex':
+                    print("Goodbye...")
+                    break
+            else:
+                print("Please use one of the short codes")
+                
+if __name__ == '__main__':
+    main()
