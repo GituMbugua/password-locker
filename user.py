@@ -1,4 +1,6 @@
 import pyperclip
+import string
+import secrets
 
 class User:
     '''
@@ -28,10 +30,11 @@ class User:
 
     @classmethod
     def generate_password():
-    '''
-    function to generate a new password
-    '''
-    alphabet = string.ascii_letters + string.digits
-    password = ''.join(secrets.choice(alphabet) for i in range(10))
+        '''
+        function to generate a new password
+        '''
+        
+        alphabet = string.ascii_letters + string.digits
+        password = ''.join(secrets.choice(alphabet) for i in range(10))
 
-    return password
+        return password
