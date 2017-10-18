@@ -2,6 +2,8 @@ import pyperclip
 import string
 import secrets
 
+global user_list
+
 class User:
     '''
     class that will create accounts for users
@@ -28,13 +30,12 @@ class User:
                 return user
             return False
 
-    @classmethod
     def generate_password():
         '''
         function to generate a new password
         '''
         
         alphabet = string.ascii_letters + string.digits
-        password = ''.join(secrets.choice(alphabet) for i in range(10))
+        password = ''.join(secrets.choice(alphabet) for i in range(5))
 
         return password
